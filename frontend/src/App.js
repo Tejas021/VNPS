@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import PoliceForm from './components/PoliceForm'
 
-function App() {
+const App = () =>{
   return (
     <div className="App">
       <Navbar/>
