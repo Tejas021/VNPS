@@ -5,10 +5,11 @@ from django.contrib.auth.models import User
 
 
 class UserIn(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     aadhaarno = models.IntegerField()
-    
-class PoliceEmergency(models.Model):
+
+
+class PoliceComplain(models.Model):
     name = models.CharField(max_length=255)
     phone = models.IntegerField()
     complain = models.CharField(max_length=500)
