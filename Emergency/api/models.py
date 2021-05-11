@@ -14,3 +14,17 @@ class PoliceComplain(models.Model):
     phone = models.IntegerField()
     complain = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
+
+
+class FireComplain(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.IntegerField()
+    complain = models.CharField(max_length=500)
+    date = models.DateField(max_length=12)
+
+
+class MedicalComplain(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.IntegerField()
+    complain = models.CharField(max_length=500)
+    date = models.DateField(max_length=12)
