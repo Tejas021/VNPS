@@ -4,8 +4,9 @@ import PoliceForm from "./PoliceForm";
 import MedicalForm from "./MedicalForm";
 import FireForm from "./FireForm";
 import Complains from "./Complains";
-import Navbar from "./Navbar";
-const Home = () => {
+
+
+const Home = ({username}) => {
   const [policecomplains, setpolicecomplains] = useState([]);
   const [medicalcomplains, setmedicalcomplains] = useState([]);
   const [firecomplains, setfirecomplains] = useState([]);
@@ -72,8 +73,9 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
-      <h1>Sup</h1>
+
+     <p className='text-start text-success my-3'>How u doin {username}</p>
+      <h1>Welcome to VNPS</h1>
 
       <div className="  text-start">
         <button
