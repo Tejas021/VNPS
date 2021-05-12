@@ -140,5 +140,5 @@ REST_FRAMEWORK = {
     ),
 }
 JWT_AUTH = {
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'learner.utils.my_jwt_response_handler'
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'Emergency.utils.my_jwt_response_handler'
 }
