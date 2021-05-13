@@ -125,13 +125,9 @@ const handleLogin=(e,data)=>{
           handle_Logout={handleLogout}/>
           
 
-          {loggedState?<Home username={username}/>:<Numbers />}
+          {loggedState?<Home username={username}/>:<h1>Login or signup to register your complain</h1>}
           {form}
     </div>
   );
 };
-// {/* <div>
-//             <h1>Login or signup to register your complain</h1>
-//             <numbers />
-//             </div> */}
 export default App;
