@@ -6,7 +6,7 @@ const FireForm = ({ onAdd }) => {
   const [phone, setphone] = useState([]);
   const [complain, setcomplain] = useState([]);
   const [date, setdate] = useState([]);
-  const userid=localStorage.getItem('id')
+  const user=localStorage.getItem('id')
   const onAdd1 = (e) => {
     e.preventDefault();
     console.log(onAdd);
@@ -15,7 +15,7 @@ const FireForm = ({ onAdd }) => {
       alert("Please add your name");
       return;
     }
-    onAdd({ name, phone, complain, date });
+    onAdd({ name, phone, complain, date,user });
   };
 
   return (

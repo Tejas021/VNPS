@@ -17,19 +17,19 @@ const Home = ({username}) => {
   useEffect(() => {
     const getPoliceComplain = async () => {
       const data = await fetch(
-        "http://localhost:8000/api/policecomplain"
+        "http://localhost:8000/api/getpolice?user="+localStorage.getItem('id')+""
       ).then((response) => response.json());
       setpolicecomplains(data);
     };
     const getFireComplain = async () => {
       const data = await fetch(
-        "http://localhost:8000/api/firecomplain"
+        "http://localhost:8000/api/getfire?user="+localStorage.getItem('id')+""
       ).then((response) => response.json());
       setfirecomplains(data);
     };
     const getMedicalComplain = async () => {
       const data = await fetch(
-        "http://localhost:8000/api/medicalcomplain"
+        "http://localhost:8000/api/getmedical?user="+localStorage.getItem('id')+""
       ).then((response) => response.json());
       setmedicalcomplains(data);
     };

@@ -81,6 +81,7 @@ const handleLogin=(e,data)=>{
     .then(json => {
       localStorage.setItem('token', json.token);
       localStorage.setItem('id',json.id)
+      // localStorage.setItem('id',json.id)
           console.log(json)
           setloggedState(true);
           setdisplay('');
