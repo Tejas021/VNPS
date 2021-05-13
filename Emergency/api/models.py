@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.fields import DateField
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 # Create your models here.
 
 
@@ -28,3 +29,10 @@ class MedicalComplain(models.Model):
     phone = models.IntegerField()
     complain = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
+
+
+def user_did_save(sender,instance,created,*args,**kwargs):
+    if created:
+        UserIn.objects.create(user=instance)
+
+post_save.connect(user_did_save,sender=User)
