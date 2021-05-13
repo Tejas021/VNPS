@@ -6,6 +6,7 @@ import {useState,useEffect} from 'react'
 // import {useHistory} from 'react-router-dom'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
+import Numbers from './components/Numbers'
 // import Routes from './Routes'
 const App = () => {
   
@@ -124,10 +125,13 @@ const handleLogin=(e,data)=>{
           handle_Logout={handleLogout}/>
           
 
-          {loggedState?<Home username={username}/>:<h1>Login or signup</h1>}
+          {loggedState?<Home username={username}/>:<Numbers />}
           {form}
     </div>
   );
 };
-
+// {/* <div>
+//             <h1>Login or signup to register your complain</h1>
+//             <numbers />
+//             </div> */}
 export default App;
