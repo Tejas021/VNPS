@@ -5,6 +5,7 @@ from rest_framework_jwt.settings import api_settings
 
 from django.contrib.auth.models import User
 
+
 class PoliceComplainSerializer(serializers.ModelSerializer):
     class Meta:
         model = PoliceComplain
@@ -22,11 +23,12 @@ class MedicalComplainSerializer(serializers.ModelSerializer):
         model = MedicalComplain
         fields = "__all__"
 
+
 class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username',)
+        fields = ('username', 'id')
 
 
 class UserSerializerWithToken(serializers.ModelSerializer):
@@ -52,4 +54,4 @@ class UserSerializerWithToken(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('token', 'username', 'password')
+        fields = ('token', 'username', 'password', 'id')

@@ -50,3 +50,11 @@ hr {
 button:hover {
   opacity: 1;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+  background-color: #121212;
+  color: aqua;
+}
+.navbar {
+  background-color: #121212 !important;
+}

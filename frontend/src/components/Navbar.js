@@ -16,6 +16,7 @@ const logged_out_nav=(
          href="/"
              >Home</a>
   </li>  
+  
 
   
 <li className="nav-item mx-4" id="tej" onClick={(e)=>{e.preventDefault();display_form('login')}}>
@@ -48,6 +49,11 @@ href="/"
   >Home</a>
             
   </li>
+  <li className="nav-item mx-4">   
+            <a className="nav-link"
+         href="/profile"
+             >Profile</a>
+  </li>  
  <li className="nav-item mx-4" id="tej" onClick={(e)=>{e.preventDefault();handleLogout()}}>
   
    <a className="nav-link" 
@@ -61,7 +67,7 @@ href="/"
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark border border-info" >
         <a className=" mx-3 navbar-brand" href="/" style={{ color: "aqua" }}>
           <h3>VNPS</h3>
         </a>

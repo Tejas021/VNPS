@@ -6,7 +6,7 @@ const FireForm = ({ onAdd }) => {
   const [phone, setphone] = useState([]);
   const [complain, setcomplain] = useState([]);
   const [date, setdate] = useState([]);
-
+  const userid=localStorage.getItem('id')
   const onAdd1 = (e) => {
     e.preventDefault();
     console.log(onAdd);

@@ -49,11 +49,13 @@ const handleLogin=(e,data)=>{
                 else
                 {
                 localStorage.setItem('token', json.token);
-              
+                localStorage.setItem('id',json.user.id)
                 console.log(json)
                 setloggedState(true);
                 setdisplay('');
+                console.log(json)
                 setusername(json.user.username)
+                
                }
                 
             }
@@ -78,8 +80,8 @@ const handleLogin=(e,data)=>{
     .then(res => res.json())
     .then(json => {
       localStorage.setItem('token', json.token);
-      
-
+      localStorage.setItem('id',json.id)
+          console.log(json)
           setloggedState(true);
           setdisplay('');
           setusername(json.username)
@@ -90,6 +92,7 @@ const handleLogin=(e,data)=>{
   
   const handleLogout = () => {
           localStorage.removeItem('token');
+          localStorage.removeItem('id');
           setloggedState(false)
       
       };
