@@ -38,13 +38,13 @@ class PoliceEmergency(APIView):
     permission_classes = (permissions.AllowAny,)
     serializer_class = PoliceComplainSerializer
 
-    lookup_url_kwargs_id = 'id'
+    lookup_url_kwargs = 'user'
 
     def get(self, request, format=None):
         data1 = []
-        id1 = request.GET.get(self.lookup_url_kwargs_id)
+        user = request.GET.get(self.lookup_url_kwargs)
 
-        data = PoliceComplain.objects.filter(userid=id1)
+        data = PoliceComplain.objects.filter(user=user)
         for i in data:
             data1.append(PoliceComplainSerializer(i).data)
 
@@ -55,13 +55,13 @@ class FireEmergency(APIView):
     permission_classes = (permissions.AllowAny,)
     serializer_class = FireComplainSerializer
 
-    lookup_url_kwargs_id = 'id'
+    lookup_url_kwargs = 'user'
 
     def get(self, request, format=None):
         data1 = []
-        id1 = request.GET.get(self.lookup_url_kwargs_id)
+        user = request.GET.get(self.lookup_url_kwargs)
 
-        data = FireComplain.objects.filter(userid=id1)
+        data = FireComplain.objects.filter(user=user)
         for i in data:
             data1.append(FireComplainSerializer(i).data)
 
@@ -72,13 +72,13 @@ class MedicalEmergency(APIView):
     permission_classes = (permissions.AllowAny,)
     serializer_class = MedicalComplainSerializer
 
-    lookup_url_kwargs_id = 'id'
+    lookup_url_kwargs = 'user'
 
     def get(self, request, format=None):
         data1 = []
-        id1 = request.GET.get(self.lookup_url_kwargs_id)
+        user = request.GET.get(self.lookup_url_kwargs)
 
-        data = MedicalComplain.objects.filter(userid=id1)
+        data = MedicalComplain.objects.filter(user=user)
         for i in data:
             data1.append(MedicalComplainSerializer(i).data)
 

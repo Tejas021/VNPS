@@ -16,12 +16,15 @@ class PoliceComplain(models.Model):
     complain = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
 class FireComplain(models.Model):
     name = models.CharField(max_length=255)
     phone = models.IntegerField()
     complain = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class MedicalComplain(models.Model):
@@ -29,10 +32,12 @@ class MedicalComplain(models.Model):
     phone = models.IntegerField()
     complain = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-def user_did_save(sender,instance,created,*args,**kwargs):
+def user_did_save(sender, instance, created, *args, **kwargs):
     if created:
         UserIn.objects.create(user=instance)
 
-post_save.connect(user_did_save,sender=User)
+
+post_save.connect(user_did_save, sender=User)

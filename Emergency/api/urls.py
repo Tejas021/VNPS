@@ -12,7 +12,7 @@ router.register('firecomplain', FireComplainViewSet, '')
 
 urlpatterns = [path('current_user/', current_user),
                path('users/', UserList.as_view()),
-               path('getmedical/', MedicalEmergency.as_view()),
-               path('getfire/', FireEmergency.as_view()),
-               path('getpolice/', PoliceEmergency.as_view())]
+               path('getmedical', MedicalEmergency.as_view()),
+               path('getfire', FireEmergency.as_view()),
+               path('getpolice', PoliceEmergency.as_view())]
 urlpatterns += router.urls
