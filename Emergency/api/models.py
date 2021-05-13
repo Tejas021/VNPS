@@ -11,26 +11,26 @@ class UserIn(models.Model):
 
 
 class PoliceComplain(models.Model):
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     phone = models.IntegerField()
-    complain = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class FireComplain(models.Model):
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     phone = models.IntegerField()
-    complain = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class MedicalComplain(models.Model):
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     phone = models.IntegerField()
-    complain = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

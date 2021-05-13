@@ -7,6 +7,7 @@ import Complains from "./Complains";
 
 
 const Home = ({username}) => {
+  let map
   const [policecomplains, setpolicecomplains] = useState([]);
   const [medicalcomplains, setmedicalcomplains] = useState([]);
   const [firecomplains, setfirecomplains] = useState([]);
@@ -17,31 +18,38 @@ const Home = ({username}) => {
   useEffect(() => {
     const getPoliceComplain = async () => {
       const data = await fetch(
-        "http://localhost:8000/api/getpolice?user="+localStorage.getItem('id')+""
+        "http://localhost:8000/api/policecomplain"
       ).then((response) => response.json());
+
       setpolicecomplains(data);
     };
     const getFireComplain = async () => {
       const data = await fetch(
-        "http://localhost:8000/api/getfire?user="+localStorage.getItem('id')+""
+        "http://localhost:8000/api/firecomplain"
       ).then((response) => response.json());
       setfirecomplains(data);
     };
     const getMedicalComplain = async () => {
       const data = await fetch(
-        "http://localhost:8000/api/getmedical?user="+localStorage.getItem('id')+""
+        "http://localhost:8000/api/medicalcomplain"
       ).then((response) => response.json());
       setmedicalcomplains(data);
     };
     getPoliceComplain();
     getMedicalComplain();
     getFireComplain();
+   
+
+
+
   }, []);
 
   const addPoliceComplain = async (complain) => {
+    console.log(complain)
     const res = await fetch("http://localhost:8000/api/policecomplain/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+
       body: JSON.stringify(complain),
     });
     const data = await res.json();
@@ -117,6 +125,9 @@ const Home = ({username}) => {
       <Complains complains={policecomplains} type={"police"} />
       <Complains complains={firecomplains} type={"fire"} />
       <Complains complains={medicalcomplains} type={"medical"} />
+{/* <div id='map' style={{width: '400px', height: '300px'}}></div>       */}
+   
+
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-
+// import Navabr from './Navbar'
 export function Numbers(){
     return (
         <table>

@@ -2,20 +2,20 @@ import React from "react";
 import { useState } from "react";
 
 const FireForm = ({ onAdd }) => {
-  const [name, setname] = useState([]);
+  const [title, settitle] = useState([]);
   const [phone, setphone] = useState([]);
-  const [complain, setcomplain] = useState([]);
+  const [description, setdescription] = useState([]);
   const [date, setdate] = useState([]);
   const user=localStorage.getItem('id')
   const onAdd1 = (e) => {
     e.preventDefault();
     console.log(onAdd);
 
-    if (name === "") {
+    if (title === "") {
       alert("Please add your name");
       return;
     }
-    onAdd({ name, phone, complain, date,user });
+    onAdd({ title, phone, description, date,user });
   };
 
   return (
@@ -33,10 +33,10 @@ const FireForm = ({ onAdd }) => {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              value={name}
+              placeholder="Title"
+              value={title}
               onChange={(e) => {
-                setname(e.target.value);
+                settitle(e.target.value);
               }}
             />
           </div>
@@ -58,10 +58,10 @@ const FireForm = ({ onAdd }) => {
               min="0"
               max="20"
               className="form-control"
-              placeholder="Complain"
-              value={complain}
+              placeholder="description"
+              value={description}
               onChange={(e) => {
-                setcomplain(e.target.value);
+                setdescription(e.target.value);
               }}
             />
           </div>

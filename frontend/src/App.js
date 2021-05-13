@@ -6,7 +6,7 @@ import {useState,useEffect} from 'react'
 // import {useHistory} from 'react-router-dom'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
-import Numbers from './components/Numbers'
+// import Numbers from './components/Numbers'
 // import Routes from './Routes'
 const App = () => {
   

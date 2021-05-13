@@ -1,11 +1,11 @@
 import React from "react";
-// import {Link,useHistory} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
 const Navbar = ({logged_in,display_form,handle_Logout}) => {
-  // const history = useHistory();
+  const history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem('token');
    handle_Logout()
-    // history.push('/')
+    history.push('/')
 };
 
 const logged_out_nav=(
@@ -50,9 +50,9 @@ href="/"
             
   </li>
   <li className="nav-item mx-4">   
-            <a className="nav-link"
-         href="/profile"
-             >Profile</a>
+            <Link className="nav-link"
+        onClick={e=>history.push("/help")}
+             >HelpLines</Link>
   </li>  
  <li className="nav-item mx-4" id="tej" onClick={(e)=>{e.preventDefault();handleLogout()}}>
   
@@ -69,7 +69,7 @@ href="/"
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark border border-info" >
         <a className=" mx-3 navbar-brand" href="/" style={{ color: "aqua" }}>
-          <h3>VNPS</h3>
+          <h3>EmerX</h3>
         </a>
         <button
           className="navbar-toggler"

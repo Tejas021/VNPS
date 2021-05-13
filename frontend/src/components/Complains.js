@@ -1,4 +1,5 @@
 import React from "react";
+import Block from './Block'
 
 const Complains = ({ complains, type }) => {
   let text;
@@ -21,13 +22,16 @@ const Complains = ({ complains, type }) => {
         {!complains
           ? "Loading"
           : complains.map((complain) => (
-              <div
-                key={complain.id}
-                className={` m-2 border border-${color1} col-md-3 col-sm-6 col-xs-12`}
-              >
-                <h6>date:{complain.date}</h6>
-                <h3>{complain.complain}</h3>
-              </div>
+              // <div
+              //   key={complain.id}
+              //   className={` m-2 border border-${color1} col-md-3 col-sm-6 col-xs-12`}
+              // >
+              //   <h6 >Date:{complain.date}</h6>
+              //   <h3 >{complain.title}</h3>
+              //   {/* <button className="btn btn-success" onclick={e=>}>show</button> */}
+              //   <h6>{complain.description}</h6>
+              // </div>
+              <Block complain={complain} color1={color1} />
             ))}
       </div>
     </div>
