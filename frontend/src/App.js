@@ -6,6 +6,7 @@ import {useState,useEffect} from 'react'
 // import {useHistory} from 'react-router-dom'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
+import Newsfeed from "./components/Newsfeed";
 // import Numbers from './components/Numbers'
 // import Routes from './Routes'
 const App = () => {
@@ -126,8 +127,9 @@ const handleLogin=(e,data)=>{
           handle_Logout={handleLogout}/>
           
 
-          {loggedState?<Home username={username}/>:<h1>Login or signup to register your complain</h1>}
+          {loggedState?<Home username={username}/>:<div><h1>Login or signup to register your complain</h1></div>}
           {form}
+          {loggedState?<></>:<Newsfeed/>}
     </div>
   );
 };
