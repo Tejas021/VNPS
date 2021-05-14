@@ -1,7 +1,20 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const MedicalForm = ({ onAdd }) => {
+
+useEffect(() => {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    console.log("Latitude is :", position.coords.latitude);
+    console.log("Longitude is :", position.coords.longitude);
+    setlatitude(position.coords.latitude);
+    setlongitude(position.coords.longitude);
+  });
+}, [])
+
+
+  const [latitude, setlatitude] = useState([])
+  const [longitude, setlongitude] = useState([])
   const [title, settitle] = useState([]);
   const [phone, setphone] = useState([]);
   const [description, setdescription] = useState([]);
@@ -15,7 +28,7 @@ const MedicalForm = ({ onAdd }) => {
       alert("Please add your name");
       return;
     }
-    onAdd({ title, phone, description, date,user });
+    onAdd({ title, phone, description, date,user,latitude,longitude });
   };
 
   return (

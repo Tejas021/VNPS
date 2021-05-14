@@ -6,7 +6,7 @@ const [disp, setdisp] = useState(false)
 
             <div
                 key={complain.id}
-                className={` m-2 border border-${color1} col-md-3 col-sm-6 col-xs-12`}
+                className={`m-2 border border-${color1} col-md-3 col-sm-6 col-xs-12`}
               >
                 <h6 >Date:{complain.date}</h6>
                 <h3 onClick={e=>setdisp(!disp)}>{complain.title}</h3>

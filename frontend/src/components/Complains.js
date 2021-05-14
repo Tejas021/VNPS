@@ -16,8 +16,8 @@ const Complains = ({ complains, type }) => {
   }
 
   return (
-    <div className="my-5 container-fluid">
-      <div className="row">
+    <div className="my-5 container-fluid ">
+      <div className="row text-center">
         <h3 style={{ textAlign: "left" }}>{text}</h3>
         {!complains
           ? "Loading"

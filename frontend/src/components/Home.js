@@ -7,7 +7,7 @@ import Complains from "./Complains";
 
 
 const Home = ({username}) => {
-  let map
+
   const [policecomplains, setpolicecomplains] = useState([]);
   const [medicalcomplains, setmedicalcomplains] = useState([]);
   const [firecomplains, setfirecomplains] = useState([]);
@@ -69,13 +69,14 @@ const Home = ({username}) => {
   };
 
   const addMedicalComplain = async (complain) => {
+    console.log(complain)
     const res = await fetch("http://localhost:8000/api/medicalcomplain/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(complain),
     });
     const data = await res.json();
-
+    console.log(complain)
     setmedicalcomplains([...medicalcomplains, data]);
   };
 

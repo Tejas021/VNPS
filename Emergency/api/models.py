@@ -15,7 +15,8 @@ class PoliceComplain(models.Model):
     phone = models.IntegerField()
     description = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
-
+    latitude = models.FloatField(max_length=10, default=0.0)
+    longitude = models.FloatField(max_length=10, default=0.0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
@@ -24,6 +25,8 @@ class FireComplain(models.Model):
     phone = models.IntegerField()
     description = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
+    latitude = models.FloatField(max_length=10, default=0.0)
+    longitude = models.FloatField(max_length=10, default=0.0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
@@ -32,6 +35,8 @@ class MedicalComplain(models.Model):
     phone = models.IntegerField()
     description = models.CharField(max_length=500)
     date = models.DateField(max_length=12)
+    latitude = models.FloatField(max_length=10, default=0.0)
+    longitude = models.FloatField(max_length=10, default=0.0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
