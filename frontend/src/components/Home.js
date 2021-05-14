@@ -5,9 +5,7 @@ import MedicalForm from "./MedicalForm";
 import FireForm from "./FireForm";
 import Complains from "./Complains";
 
-
-const Home = ({username}) => {
-
+const Home = ({ username }) => {
   const [policecomplains, setpolicecomplains] = useState([]);
   const [medicalcomplains, setmedicalcomplains] = useState([]);
   const [firecomplains, setfirecomplains] = useState([]);
@@ -17,16 +15,16 @@ const Home = ({username}) => {
 
   useEffect(() => {
     const getPoliceComplain = async () => {
-      const data = await fetch(
-        "http://localhost:8000/api/policecomplain"
-      ).then((response) => response.json());
+      const data = await fetch("http://localhost:8000/api/policecomplain").then(
+        (response) => response.json()
+      );
 
       setpolicecomplains(data);
     };
     const getFireComplain = async () => {
-      const data = await fetch(
-        "http://localhost:8000/api/firecomplain"
-      ).then((response) => response.json());
+      const data = await fetch("http://localhost:8000/api/firecomplain").then(
+        (response) => response.json()
+      );
       setfirecomplains(data);
     };
     const getMedicalComplain = async () => {
@@ -38,14 +36,10 @@ const Home = ({username}) => {
     getPoliceComplain();
     getMedicalComplain();
     getFireComplain();
-   
-
-
-
   }, []);
 
   const addPoliceComplain = async (complain) => {
-    console.log(complain)
+    console.log(complain);
     const res = await fetch("http://localhost:8000/api/policecomplain/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -69,22 +63,36 @@ const Home = ({username}) => {
   };
 
   const addMedicalComplain = async (complain) => {
-    console.log(complain)
+    console.log(complain);
     const res = await fetch("http://localhost:8000/api/medicalcomplain/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(complain),
     });
     const data = await res.json();
-    console.log(complain)
+    console.log(complain);
     setmedicalcomplains([...medicalcomplains, data]);
   };
 
   return (
     <div>
-
-     <p className='text-start text-success my-3'>How u doin {username}</p>
-      <h1>Welcome to VNPS</h1>
+      {/* <p className='text-start text-success my-3'>{username}</p> */}
+      <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              src="https://apexgroupofhospitals.com/wp-content/uploads/emergency_banner.jpg"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+      </div>
+      <h1>Welcome to Emerx</h1>
 
       <div className="  text-start">
         <button
@@ -126,9 +134,7 @@ const Home = ({username}) => {
       <Complains complains={policecomplains} type={"police"} />
       <Complains complains={firecomplains} type={"fire"} />
       <Complains complains={medicalcomplains} type={"medical"} />
-{/* <div id='map' style={{width: '400px', height: '300px'}}></div>       */}
-   
-
+      {/* <div id='map' style={{width: '400px', height: '300px'}}></div>       */}
     </div>
   );
 };

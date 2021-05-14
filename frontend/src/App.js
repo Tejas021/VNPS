@@ -126,8 +126,7 @@ const handleLogin=(e,data)=>{
           display_form={displayForm}
           handle_Logout={handleLogout}/>
           
-
-          {loggedState?<Home username={username}/>:<div><h1>Login or signup to register your complain</h1></div>}
+          {loggedState?<Home username={username}/>:<div></div>}
           {form}
           {loggedState?<></>:<Newsfeed/>}
     </div>
