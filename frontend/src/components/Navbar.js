@@ -54,6 +54,13 @@ href="/"
         onClick={e=>history.push("/help")}
              >HelpLines</Link>
   </li>  
+  <li className="nav-item mx-4">   
+            <Link className="nav-link"
+        onClick={e=>history.push("/news")}
+             >News</Link>
+  </li>  
+
+
  <li className="nav-item mx-4" id="tej" onClick={(e)=>{e.preventDefault();handleLogout()}}>
   
    <a className="nav-link" 
